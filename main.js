@@ -29,11 +29,12 @@ function lazyLoadUseIntersectionObserver(){
 
 // lazyLoadUseIntersectionObserver();
 
+// -------------------------------------------------------------------------------------------------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function() {
     let lazyImages = [].slice.call(document.querySelectorAll("img[data-src]"));
     let active = false;
-  
+
     const lazyLoad = function() {
       if (active === false) {
         active = true;
@@ -63,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 200);
       }
     };
+    lazyLoad();
   
     document.addEventListener("scroll", lazyLoad);
     window.addEventListener("resize", lazyLoad);
